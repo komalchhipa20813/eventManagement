@@ -23,7 +23,7 @@ if (!function_exists('decryptid')) {
 	}
 }
 
-    function active_class($path, $active = 'current') {
+    function active_class($path, $active = 'active') {
       return call_user_func_array('Request::is', (array)$path) ? $active : '';
     }
 

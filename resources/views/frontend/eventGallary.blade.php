@@ -27,20 +27,18 @@
     @if(!$data['events']->isEmpty())
     
     <div class="row ">
-    <div class='list-group gallery'>
      @foreach ($data['events'] as $event)
         
         <div class="col-md-3 col-sm-6 event-images">
-        <a class="thumbnail fancybox image"  rel="ligthbox" href="{{ asset('images/events/'.$event->image) }}">
+        <a class="thumbnail fancybox image" data-fancybox="gallery"  rel="ligthbox" href="{{ asset('images/events/'.$event->image) }}">
             <img class="event-blog-image img-responsive" src="{{ asset('images/events/'.$event->image) }}" width="100%" height="280" alt="Blog Image 2"/>
         </a>
         </div>
     
     @endforeach
-        </div>
     </div>
     @else
-    <div class="title-start col-md-4 col-md-offset-4">
+    <div class="title-start col-md-12 col-md-offset-12">
         <br />
         <h2></h2>
         <p class="sub-text text-center">No Image Avaialbe <br>
@@ -55,7 +53,7 @@
 @endsection
 @push('plugin-scripts')
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 <script src="{{ asset('assets/js/jquery.fancybox.min.js') }}"></script>
 
 @endpush
@@ -63,36 +61,39 @@
 @push('custom-scripts')
 <script type="text/javascript">
     $(document).ready(function(){
+//         Fancybox.bind("[data-fancybox]", {
+//     // Your custom options
+// });
         $(".fancybox").fancybox({
 
             idleTime  : false,
-  baseClass : 'fancybox-custom-layout',
-  margin    : 0,
-  gutter    : 0,
-  infobar   : false,
-  thumbs    : {
-    hideOnClose : false,
-    parentEl    : '.fancybox-outer'
-  },
-  touch : {
-    vertical : false
-  },
-  buttons : [
-    'close',
-    'thumbs',
-    'share'
-  ],
-  animationEffect   : "fade",
-  animationDuration : 300,
-  onInit : function( instance ) {
-    // Create new wrapping element, it is useful for styling
-    // and makes easier to position thumbnails
-    instance.$refs.inner.wrap( '<div class="fancybox-outer"></div>' );
-  },
-  caption : function(instance, item) {
-    return '<h3>Collection #162 – <br /> The Histographer</h3><p>This collection of photos, curated by The Histographer, is a collection around the concept of \'Autumn is here\'.</p><p><a href="https://unsplash.com/collections/curated/162" target="_blank">unsplash.com</a></p>';
-  }
-                    });
+                baseClass : 'fancybox-custom-layout',
+                margin    : 0,
+                gutter    : 0,
+                infobar   : false,
+                thumbs    : {
+                    hideOnClose : false,
+                    parentEl    : '.fancybox-outer'
+                },
+                touch : {
+                    vertical : false
+                },
+                // buttons : [
+                //     'close',
+                //     'thumbs',
+                //     'share'
+                // ],
+                animationEffect   : "fade",
+                animationDuration : 300,
+                onInit : function( instance ) {
+                    // Create new wrapping element, it is useful for styling
+                    // and makes easier to position thumbnails
+                    instance.$refs.inner.wrap( '<div class="fancybox-outer"></div>' );
+                },
+                caption : function(instance, item) {
+                    return '<h3>Collection #162 – <br /> The Histographer</h3><p>This collection of photos, curated by The Histographer, is a collection around the concept of \'Autumn is here\'.</p><p><a href="https://unsplash.com/collections/curated/162" target="_blank">unsplash.com</a></p>';
+                }
+                                    });
     });
 </script>
 

@@ -2,13 +2,13 @@
 @section('title',"User")
 @section('content')
 <section class="about-us">
-    <div class="title-start col-md-4 col-md-offset-4">
+    <div class="title-start col-md-12 col-md-offset-12">
         <br />
         <h2>About Us</h2>
         <p class="sub-text text-center">Know our great story</p>
     </div>
     <div class="container">
-        <div class="about-first">
+        <div class="row about-first">
             <div class="block col-md-4">
                 <div class="content-block">
                     <i class="fa fa-users fa-3x"></i>
@@ -31,7 +31,7 @@
                 </div>
             </div>
         </div>
-        <div class="about-part">
+        <div class="row about-part">
             <div class="col-md-8">
             
                 <h3>ABOUT US</h3>

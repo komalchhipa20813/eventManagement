@@ -96,7 +96,7 @@ class EventController extends Controller
         if(isset($request->file))
         {
             $image = $request->file('file');
-            $imageName = time() .'_eve_'.$image->getClientOriginalExtension();
+            $imageName = time() .'_eve_'.$image->getClientOriginalName();
             $image->move(public_path('images/events/thumnail'),$imageName);
         }
         
@@ -135,7 +135,7 @@ class EventController extends Controller
             ];
         }
         return response($response);
-        // return response($imageName);
+        // return response($image->->getClientOriginalName());
 
     }
 

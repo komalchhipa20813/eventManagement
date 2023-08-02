@@ -38,7 +38,7 @@ class EventGalleryController extends Controller
     public function store(Request $request)
     {
         $image = $request->file('file');
-        $imageName = time() .'eve_'.$image->getClientOriginalExtension();
+        $imageName = time() .'eve_'.$image->getClientOriginalName();
         $image->move(public_path('images/events'),$imageName);
         // 
         EventGallery::updateOrCreate([

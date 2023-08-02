@@ -2,30 +2,38 @@
     <div id="menu" class="header-menu sticky">
         <div class="box">
             <div class="row">
-                <nav role="navigation" class="col-sm-12">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
+                <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+                    <div class="container-fluid navbar-brand">
+                        <a class="navbar-brand navbar-brand-text" >Event</a>
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
                         </button>
 
-                        <!--== Logo ==-->
-                        <span class="navbar-brand logo">
-                           Events
-                        </span>
-
-                    </div>
-                    <div class="navbar-collapse collapse">
-
-                        <!--== Navigation Menu ==-->
-                        <ul class="nav navbar-nav">
-                            <li class="{{ active_class(['/']) }}"><a href="{{ route('home')}}">Home</a></li>
-                            <li class="{{ active_class(['/']) }}"> </li>
-                            <li class="{{ active_class(['events','events/*']) }}"><a href="{{route('events.index')}}">Event</a></li>
-                            <li class="{{ active_class(['about-us']) }}"><a href="{{route('about-us.index')}}">About Us</a></li>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                            <a class="nav-link {{ active_class(['/']) }}" aria-current="page" href="{{route('home')}}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link {{ active_class(['events','events/*']) }}" aria-current="page" href="{{route('events.index')}}">Event</a>
+                            </li>
+                            
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link {{ active_class(['about-us']) }}" aria-current="page" href="{{route('about-us.index')}}">About Us</a>
+                            </li>
                         </ul>
+                        </div>
                     </div>
                 </nav>
             </div>
@@ -37,35 +45,39 @@
    
     @endphp
     @if(Request::segment(1) == '')
-    <!--== Site Description ==-->
-    <div class="header-cta">
-        <div class="container">
-            <div class="row">
-                <div class="entry-content">
-                    @if(!empty(getUpComingEventData()))
-                    <p>{{Request::segment(1)}}</p>
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        </div>
+            <div class="carousel-item active">
+                <img src="{{ asset('assets/images/evento/demo/bg-slide-01.jpg') }}" alt="Los Angeles" class="d-block w-100">
+                <div class="carousel-caption">
+                @if(!empty(getUpComingEventData()))
                     <p><span class="start-text"><b>From THE {{Carbon::parse(getUpComingEventData()->date)->format('d F y')}}</b></span></p>
                     <h4 class="entry-title"><a href="#">{{getUpComingEventData()->title}}</a></h4>
-                    <!-- <h5><span><b>Schrodinger confirms that Germany international ...</b></span></h5> -->
                     @endif
                 </div>
             </div>
+            <div class="carousel-item">
+                 <img src="{{ asset('assets/images/evento/demo/bg-slide-02.jpg') }}" alt="Chicago" class="d-block w-100">
+                 <div class="carousel-caption">
+                 <!-- <div class="entry-content"> -->
+                    @if(!empty(getUpComingEventData()))
+                    <p><span class="start-text"><b>From THE {{Carbon::parse(getUpComingEventData()->date)->format('d F y')}}</b></span></p>
+                    <h4 class="entry-title"><a href="#">{{getUpComingEventData()->title}}</a></h4>
+                    @endif
+                <!-- </div> -->
+            </div>
         </div>
-    </div>
-
-    <div class="header-bg">
-        <div id="preloader">
-            <div class="preloader"></div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
         </div>
-        <div class="main-slider" id="main-slider">
-            <!--== Main Slider  ==-->
-            <ul class="slides">
-                <li><img src="{{ asset('assets/images/evento/demo/bg-slide-01.jpg') }}" alt="Slide Image"/></li>
-                <li><img src="{{ asset('assets/images/evento/demo/bg-slide-02.jpg') }}" alt="Slide Image 2"/></li>
-            </ul>
-
-        </div>
-    </div>
     @endif
 
     

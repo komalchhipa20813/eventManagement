@@ -4,7 +4,7 @@
 
 <section id="team" class="team"> 
 	<div class="container">
-	<div class="title-start team-menu col-md-4 col-md-offset-4">
+	<div class="title-start team-menu  col-md-offset-4">
 		<h2 class="team-heading">Our Team</h2>
 		<p class="sub-text text-center">Meet the greatest Team of Themewagon</p>
 	</div>

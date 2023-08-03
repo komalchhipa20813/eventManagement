@@ -14,7 +14,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $data['events']=Event::where('status','!=',2)->latest()->get();
+        $data['events']=Event::where('status',1)->latest()->get();
         $data['count']=$data['events']->count();
        
         return view('frontend.event',compact('data'));

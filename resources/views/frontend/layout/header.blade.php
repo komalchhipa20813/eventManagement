@@ -18,17 +18,20 @@
                             <li class="nav-item">
                             <a class="nav-link {{ active_class(['events','events/*']) }}" aria-current="page" href="{{route('events.index')}}">Event</a>
                             </li>
-                            
+                            @if(!getEventsData()->isEmpty())
+    
                             <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown
+                                   Event List
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                @foreach (getEventsData() as $event)
+
+                                    <li><a class="dropdown-item" href="#">{{$event->title}}</a></li>
+                                    @endforeach
                                 </ul>
                             </li>
+                            @endif
                             <li class="nav-item">
                             <a class="nav-link {{ active_class(['about-us']) }}" aria-current="page" href="{{route('about-us.index')}}">About Us</a>
                             </li>

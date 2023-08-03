@@ -54,8 +54,15 @@ if (!function_exists('decryptid')) {
          $toDate= Carbon::today()->format('Y-m-d 00:00:00');
          
         return Event::where('status',1)->whereBetween('date',[$toDate,$endDate])->orderBy('date', 'ASC')->first();
-      }
-  }
+      }    
+    }
+
+    if(!function_exists('getEventsData')) {
+      function getEventsData() {
+         
+        return Event::where('status',1)->orderBy('date', 'ASC')->get();
+      }    
+    }
 
 
     

@@ -79,7 +79,18 @@ hr{
 .carousel-caption {
   bottom: 15.25rem !important;
 }
-
+.list-event-text{
+  font-size: 15px;    
+                                    text-align: center;
+                                    padding: 8px 0;
+                                    color: black;
+                                    font-size: 18px;
+                                    display: -webkit-box;
+                                    -webkit-box-orient: vertical;
+                                    -webkit-line-clamp: 1;
+                                    overflow: hidden;
+                                    height: 38px;
+}
 
 /* .dropdown-item {
   display: block;
@@ -493,6 +504,21 @@ Header CTA ========*/
     transform: skew(-15deg);
   }
  @media (max-width:500px){
+
+  .dropdown-item {
+    display: block;
+    width: 100%;
+    font-size: 18px !important;
+    padding: 5px 2px 5px 12px;
+    clear: both;
+    font-weight: 400;
+    color: #f4f5f7;
+    text-align: inherit;
+    /* text-decoration: none; */
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
   .entry-content{
      
     width: 350px;
@@ -568,6 +594,20 @@ h5 span {
 /*--------------------
 Navigation =========*/
 @media (max-width: 991px) {
+  .dropdown-item {
+    display: block;
+    width: 100%;
+    font-size: 18px !important;
+    padding: 5px 2px 5px 12px;
+    clear: both;
+    font-weight: 400;
+    color: #f4f5f7;
+    text-align: inherit;
+    /* text-decoration: none; */
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
   .event-back{
     padding-top: 50px;
   }
@@ -646,7 +686,7 @@ background: none;
 
 .navbar-nav > li > a {
   line-height: 2.4rem;
-  padding: 0.8rem 1rem;
+  padding: 4px;
   font-size: 20px;
   font-weight: bold;
   border-radius: 2px;
@@ -750,6 +790,20 @@ Home ===============*/
  * Team Member
  * --------------------------------------------- */
 @media (max-width: 700px){
+  .dropdown-item {
+    display: block;
+    width: 100%;
+    font-size: 18px !important;
+    padding: 5px 2px 5px 12px;
+    clear: both;
+    font-weight: 400;
+    color: #f4f5f7;
+    text-align: inherit;
+    /* text-decoration: none; */
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
  .member {
 width: 300px;
 margin: 0 auto;
@@ -783,11 +837,50 @@ cursor: pointer;
 } 
 p.name-member {
   background: rgb(197, 239, 247);
-    text-align: center;
-    padding: 10px 0;
-    color: black;
-    font-weight: bold;
-    font-size: 18px;
+  text-align: center;
+  padding: 8px 0;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  height: 38px;
+}
+
+.tooltip-main {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  font-weight: 700;
+  background: #f3f3f3;
+  border: 1px solid #737373;
+  color: #737373;
+  margin: 4px 121px 0 5px;
+  float: right;
+  text-align: left !important;
+}
+
+.tooltip-qm {
+  float: left;
+  margin: -2px 0px 3px 4px;
+  font-size: 12px;
+}
+
+.tooltip-inner {
+  max-width: 236px !important;
+  height: 76px;
+  font-size: 12px;
+  padding: 10px 15px 10px 20px;
+  background: #FFFFFF;
+  color: rgba(0, 0, 0, .7);
+  border: 1px solid #737373;
+  text-align: left;
+}
+
+.tooltip.show {
+  opacity: 1;
 }
 /* ---------
  * Timeline
@@ -976,6 +1069,20 @@ font-style: italic;
     float: none !important;
 }
 @media (max-width: 767px) {
+  .dropdown-item {
+    display: block;
+    width: 100%;
+    font-size: 18px !important;
+    padding: 5px 2px 5px 12px;
+    clear: both;
+    font-weight: 400;
+    color: #f4f5f7 !important;
+    text-align: inherit;
+    /* text-decoration: none; */
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
   .navbar-nav > li > a {
     line-height: 2.4rem;
     padding: 4px;
@@ -1119,7 +1226,20 @@ strong {
 }
 
 @media (min-width:991px ){
-
+  .dropdown-item {
+    display: block;
+    width: 100%;
+    font-size: 18px !important;
+    padding: 5px 2px 5px 12px;
+    clear: both;
+    font-weight: 400;
+    color: #f4f5f7;
+    text-align: inherit;
+    /* text-decoration: none; */
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
   .event-back{
     padding-top: 50px;
   }
